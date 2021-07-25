@@ -1,0 +1,11 @@
+{
+    "title": "Single Instance Sample App",
+    "launchStyles": {
+        "height": "300px",
+        "width": "500px",
+        "left": "50%",
+        "top": "50%"
+    },
+    "resizable": true,
+    "multiInstance": false
+}

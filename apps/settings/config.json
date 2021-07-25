@@ -1,0 +1,11 @@
+{
+    "title": "Settings",
+    "launchStyles": {
+        "height": "50%",
+        "width": "50%",
+        "left": "25%",
+        "top": "25%"
+    },
+    "resizable": true,
+    "multiInstance": false
+}

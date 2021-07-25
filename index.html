@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="Description" content="NebulaOS DevTest">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/system/main.css">
+    <link rel="stylesheet" type="text/css" href="/system/themes/winxp.css">
+
+    <title>NebulaOS Tech Demo</title>
+</head>
+
+<body>
+    <div id="appContainer">
+
+        <div id="pageContainer"></div>
+
+        <div id="osDesktop"></div>
+
+        <div id="windowManager">
+            <!-- WINDOWS GO HERE -->
+        </div>
+
+        <div id="osTaskbar">
+            <div id="menu" class="is-hidden">
+                <ul>
+                    <li onclick="nebos.app.open('testapp')">
+                        <i class="material-icons">widgets</i>
+                        <span>Launch testapp</span>
+                    </li>
+                    <li onclick="nebos.app.open('app2')">
+                        <i class="material-icons">widgets</i>
+                        <span>Launch app2</span>
+                    </li>
+                    <li onclick="nebos.app.open('settings')">
+                        <i class="material-icons">settings</i>
+                        <span>Settings</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="menu material-icons">launch</div>
+        </div>
+
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="nebula/nebula.js"></script> <!-- Import Nebula Framework -->
+
+    <!--begin::Page Scripts(used by this page) -->
+	<div id="pageScripts"></div>
+	<!--end::Page Scripts -->
+
+</body>
+</html>

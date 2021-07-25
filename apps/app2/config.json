@@ -1,0 +1,9 @@
+{
+    "title": "Another Sample App",
+    "launchStyles": {
+        "height": "700px",
+        "width": "500px"
+    },
+    "resizable": true,
+    "multiInstance": true
+}

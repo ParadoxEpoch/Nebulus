@@ -1,0 +1,10 @@
+{
+    "path": "/nebula",
+    "modules": ["notify", "animate", "uxExtensions", "assistant"],
+    "pageMeta": {
+        "testapp":{
+            "title": "Sample App",
+            "requires": ["testapp.js"]
+        }
+    }
+}
