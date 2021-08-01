@@ -13,8 +13,8 @@ let nebos = new class NebulaOS {
     async boot() {
         console.log('Booting Nebulus v0.1 Technical Preview...');
 
-        this.desktop = (await import("/system/services/desktop.service.js")).default;
-        this.taskbar = (await import("/system/services/taskbar.service.js")).default;
+        this.desktop = (await import("./system/services/desktop.service.js")).default;
+        this.taskbar = (await import("./system/services/taskbar.service.js")).default;
 
         nebos.app.open('welcomeApp');
         

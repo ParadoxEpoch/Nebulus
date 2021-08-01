@@ -1,5 +1,5 @@
 {
-    "path": "/nebula",
+    "path": "nebula",
     "modules": ["notify", "animate", "uxExtensions", "assistant"],
     "pageMeta": {
         "testapp":{

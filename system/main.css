@@ -8,7 +8,8 @@ body {
     height: 100vh;
     width: 100vw;
     background-size: cover;
-    background-image: url('/system/assets/wallpapers/default.jpg');
+    background-position: center;
+    background-image: url('assets/wallpapers/default.jpg');
 }
 
 #osDesktop span {
