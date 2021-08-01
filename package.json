@@ -1,0 +1,24 @@
+{
+  "name": "nebulus-dashlab",
+  "version": "1.0.0",
+  "description": "Nebula DashLab System Software",
+  "main": "boot.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maega/Nebulus.git"
+  },
+  "author": "Tristan Gauci (Nebula Innovations)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maega/Nebulus/issues"
+  },
+  "homepage": "https://github.com/Maega/Nebulus#readme",
+  "devDependencies": {
+    "electron": "^13.1.7",
+    "sass": "^1.37.0"
+  }
+}
