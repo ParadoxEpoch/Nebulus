@@ -57,7 +57,7 @@ let nebos = new class NebulaOS {
             titleContent.innerText = `${config.title} (${appID}:${seed})`;
             titleBar.append(titleContent);
             let closeBtn = document.createElement('span');
-            closeBtn.innerText = 'X';
+            closeBtn.innerHTML = '<i class="material-icons">close</i>';
             closeBtn.classList.add('close');
             titleBar.append(closeBtn);
         
