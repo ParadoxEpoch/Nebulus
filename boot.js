@@ -1,16 +1,16 @@
 const {app, BrowserWindow} = require('electron');
 
-function createWindow() {
+function spawnLauncher() {
     const win = new BrowserWindow({
         width: 1920,
         height: 1200,
         frame: false,
-        fullscreen: true
+        //fullscreen: true
     })
 
     win.loadFile('index.html');
 
-    //win.openDevTools();
+    win.openDevTools();
 }
 
 function launchApp(appId) {
@@ -28,9 +28,9 @@ function launchApp(appId) {
 }
 
 app.whenReady().then(() => {
-    createWindow();
+    spawnLauncher();
     //createAppWindow();
 
-    launchApp('settings');
+    //launchApp('settings');
 
 });

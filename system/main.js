@@ -1,6 +1,5 @@
-$(document).on('click', '#osDesktop [target]', (target) => nebos.desktop.highlight(target.currentTarget.className)); // Highlight Desktop Icon
-$(document).on('dblclick', '#osDesktop [target]', (target) => nebos.app.open(target.currentTarget.getAttribute('target'))); // Launch Desktop Icon
-$(document).on('click', '#osTaskbar .menu', () => $('#menu').toggleClass('is-hidden')); // Toggle launcher on taskbar button click
+$(document).on('click', '#osDesktop [target]', (target) => nebos.app.open(target.currentTarget.getAttribute('target'))); // Launch Desktop Icon
+$(document).on('click', '#osHomebar', () => $('#menu').toggleClass('is-hidden')); // Toggle launcher on homebar click
 $(document).on('click', '.window .drag-handle span.close', (target) => { // Quit app on close button
     let targetInstance = target.currentTarget.closest('.window').id;
     nebos.app.quit(targetInstance);
@@ -16,7 +15,7 @@ let nebos = new class NebulaOS {
         this.desktop = (await import("./system/services/desktop.service.js")).default;
         this.taskbar = (await import("./system/services/taskbar.service.js")).default;
 
-        nebos.app.open('welcomeApp');
+        //nebos.app.open('welcomeApp');
         
     }
 
