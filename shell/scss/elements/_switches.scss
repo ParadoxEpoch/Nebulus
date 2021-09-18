@@ -1,0 +1,16 @@
+.switch[type=checkbox] + label {
+    margin: 0.25rem;
+
+    &:before {
+        background: $input-switch-background-color;
+    };
+
+}
+
+.switch[type=checkbox]:checked + label {
+
+    &:before {
+        background: $input-switch-active-background-color;
+    }
+
+}

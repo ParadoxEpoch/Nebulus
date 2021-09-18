@@ -1,0 +1,101 @@
+body {
+    &.ui-slider-active {
+        cursor: grabbing;
+    }
+}
+
+.slider-container {
+    width: 100%;
+    max-width: 312px;
+    padding: 36px 32px 48px 32px;
+    
+    box-sizing: border-box;
+    
+    * {
+        box-sizing: inherit;
+        &:before,
+        &:after {
+            box-sizing: inherit;
+        }
+    }
+
+    .slider {
+        --primary: #7f00ff;
+        --handle: #fff;
+        --handle-active: #{mix(white, #7f00ff, 70%)};
+        --handle-hover: #{mix(white, #7f00ff, 90%)};
+        --handle-border: 2px solid var(--primary);
+        --line: #cdd9ed;
+        --line-active: var(--primary);
+        height: 23px;
+        width: 100%;
+        position: relative;
+        pointer-events: none;
+        .ui-slider-handle {
+            --y: 0;
+            --background: var(--handle);
+            cursor: grab;
+            -webkit-tap-highlight-color: transparent;
+            top: 0;
+            width: 23px;
+            height: 23px;
+            transform: translateX(-50%);
+            position: absolute;
+            outline: none;
+            display: block;
+            pointer-events: auto;
+            div {
+                width: 23px;
+                height: 23px;
+                border-radius: 50%;
+                transition: background .4s ease;
+                transform: translateY(calc(var(--y) * 1px));
+                border: var(--handle-border);
+                background: var(--background);
+            }
+            &:hover {
+                --background: var(--handle-hover);
+            }
+            &:active {
+                --background: var(--handle-active);
+                cursor: grabbing;
+            }
+        }
+        svg {
+            --stroke: var(--line);
+            display: block;
+            height: 83px;
+            path {
+                fill: none;
+                stroke: var(--stroke);
+                stroke-width: 1;
+            }
+        }
+        .active,
+        & > svg {
+            position: absolute;
+            top: -30px;
+            height: 83px;
+        }
+        & > svg {
+            left: 0;
+            width: 100%;
+        }
+        .active {
+            position: absolute;
+            overflow: hidden;
+            left: calc(var(--l) * 1px);
+            right: calc(var(--r) * 1px);
+            svg {
+                --stroke: var(--line-active);
+                position: relative;
+                left: calc(var(--l) * -1px);
+                right: calc(var(--r) * -1px);
+                path {
+                    stroke-width: 2;
+                }
+            }
+        }
+    }
+    
+}

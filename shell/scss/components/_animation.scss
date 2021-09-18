@@ -1,0 +1,242 @@
+// animate.css Extensions
+@-webkit-keyframes pageFadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 5vh, 0);
+        transform: translate3d(0, 5vh, 0);
+    }
+  
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+  
+@keyframes pageFadeInUp {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 5vh, 0);
+        transform: translate3d(0, 5vh, 0);
+    }
+  
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+  
+.animate__pageFadeInUp {
+    -webkit-animation-name: pageFadeInUp;
+    animation-name: pageFadeInUp;
+}
+
+@-webkit-keyframes pageFadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -5vh, 0);
+        transform: translate3d(0, -5vh, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes pageFadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -5vh, 0);
+        transform: translate3d(0, -5vh, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate__pageFadeInDown {
+  -webkit-animation-name: pageFadeInDown;
+  animation-name: pageFadeInDown;
+}
+
+@-webkit-keyframes pageFadeOutUp {
+    from {
+        opacity: 1;
+    }
+  
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -5vh, 0);
+        transform: translate3d(0, -5vh, 0);
+    }
+}
+  
+@keyframes pageFadeOutUp {
+    from {
+        opacity: 1;
+    }
+  
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -5vh, 0);
+        transform: translate3d(0, -5vh, 0);
+    }
+}
+  
+.animate__pageFadeOutUp {
+    -webkit-animation-name: pageFadeOutUp;
+    animation-name: pageFadeOutUp;
+}
+
+@-webkit-keyframes pageFadeOutDown {
+    from {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 5vh, 0);
+        transform: translate3d(0, 5vh, 0);
+    }
+}
+
+@keyframes pageFadeOutDown {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 5vh, 0);
+        transform: translate3d(0, 5vh, 0);
+    }
+}
+
+.animate__pageFadeOutDown {
+    -webkit-animation-name: pageFadeOutDown;
+    animation-name: pageFadeOutDown;
+}
+
+// Animated Logos Background
+.background-animated {
+	background: #7f00ff url(https://aeonlabs.com.au/assets/img/icon-bg.png) repeat 0 0;
+	-webkit-animation: 18s linear 0s normal none infinite background-animated;
+	-moz-animation: 18s linear 0s normal none infinite background-animated;
+	-ms-animation: 18s linear 0s normal none infinite background-animated;
+	-o-animation: 18s linear 0s normal none infinite background-animated;
+	animation: 18s linear 0s normal none infinite background-animated
+}
+
+// Animated Logos Text Content (darker icons behind text for better contrast)
+.background-animated-text {
+    border-radius: 20px;
+    width: fit-content;
+    margin: auto;
+    padding: 5px 0px;
+}
+
+@-webkit-keyframes background-animated {
+	from {
+		background-position: 0 0
+	}
+	to {
+		background-position: 0 -1450px
+	}
+}
+
+@-moz-keyframes background-animated {
+	from {
+		background-position: 0 0
+	}
+	to {
+		background-position: 0 -1450px
+	}
+}
+
+@-ms-keyframes background-animated {
+	from {
+		background-position: 0 0
+	}
+	to {
+		background-position: 0 -1450px
+	}
+}
+
+@-o-keyframes background-animated {
+	from {
+		background-position: 0 0
+	}
+	to {
+		background-position: 0 -1450px
+	}
+}
+
+@keyframes background-animated {
+	from {
+		background-position: 0 0
+	}
+	to {
+		background-position: 0 -1450px
+	}
+}
+
+// Wave Animation
+.wave-container {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    pointer-events: none;
+}
+
+.wave-container .waves {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px
+}
+
+@media only screen and (max-width: 1169px) {
+    .wave-container {
+        display: none;
+    }
+}
+
+.wave-container g > use {
+    animation: wave-forever 25s cubic-bezier(.55,.5,.45,.5) infinite
+}
+
+.wave-container g > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s
+}
+
+.wave-container g > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s
+}
+
+.wave-container g > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s
+}
+
+.wave-container g > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s
+}
+
+@keyframes wave-forever {
+    0% {
+        transform: translate3d(-90px,0,0)
+    }
+
+    100% {
+        transform: translate3d(85px,0,0)
+    }
+}

@@ -1,0 +1,36 @@
+<head>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" type="text/css" href="../../vendor/fontawesome-pro-5.13.0-web/css/all.min.css">
+
+    <!-- Core Shell Styles -->
+    <link rel="stylesheet" type="text/css" href="../../css/shell.css">
+</head>
+
+<div class="is-flex is-align-items-center is-justify-content-center" style="height:10%;width:100%;background:linear-gradient(to right, #151a24, rgb(17, 22, 31))">
+
+    <span style="position:absolute;left:0px;padding:20px" ipc="app.quit" arg="systemstats">
+        <i class="icon is-large fad fa-chevron-left fa-3x"></i>
+    </span>
+
+    <span class="icon-text">
+        <i class="icon is-large fad fa-monitor-heart-rate fa-3x"></i>
+        <span class="title is-2 ml-3">System Stats</span>
+    </span>
+
+</div>
+
+<div style="height:90%;width:100%;padding:150px" class="has-text-centered">
+
+    <div id="output">
+        <div class="title is-3 my-6">Fetching data, please wait...</div>
+    </div>
+
+    <div class="mt-5">
+        <button class="button button-cta" id="close-btn"><i class="icon is-medium fad fa-chevron-left fa-lg mr-2"></i> Return to Dashboard</button>
+    </div>
+    
+</div>
+
+<script src="systemstats.app.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

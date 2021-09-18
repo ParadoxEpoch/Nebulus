@@ -4,8 +4,9 @@
   "description": "Nebula DashLab System Software",
   "main": "boot.js",
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "export DISPLAY=:0 && electron --inspect .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-watch": "sass --watch shell/scss:shell/css --style compressed"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,18 @@
   "homepage": "https://github.com/Maega/Nebulus#readme",
   "devDependencies": {
     "electron": "^13.1.7",
-    "sass": "^1.37.0"
+    "sass": "^1.39.0"
+  },
+  "dependencies": {
+    "bulma": "^0.9.3",
+    "bulma-extensions": "^6.2.7",
+    "electron-reload": "^2.0.0-alpha.1",
+    "fs-extra": "^10.0.0",
+    "gridstack": "^4.2.6",
+    "node-hue-api": "^5.0.0-beta.8",
+    "node-wifi": "^2.0.15",
+    "obs-websocket-js": "^4.0.3",
+    "rpi-throttled": "^1.2.1",
+    "simple-keyboard": "^3.2.43"
   }
 }

@@ -1,0 +1,35 @@
+.tabs {
+    //background: $primary-gradient;
+    background: linear-gradient(to right, $primary 0%, $primary-alt 60%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 0.7rem;
+    margin-bottom: 0;
+}
+.tabs:not(:last-child) {
+    margin-bottom: 0;
+}
+.tabs ul {
+    border-bottom: 0;
+}
+/* .tabs .tab-link {
+    margin-top: 0;
+} */
+.tabs .tab-link a {
+    color: $white;
+    border-bottom: 0;
+}
+.tabs .tab-link.is-active a {
+    color: $primary;
+    background-color: #fff;
+    border: 1px solid $primary;
+    border-radius: 3px;
+    box-shadow: 0 14px 26px -12px rgba(127, 0, 255, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(127, 0, 255, 0.2) !important;
+}
+.nebula-tabs-container .tab {
+    display: none;
+    //padding: 1rem 0 1rem 0;
+}
+.nebula-tabs-container .tab.is-active {
+    display: block;
+}

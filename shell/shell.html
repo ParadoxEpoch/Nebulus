@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Material Icons -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"> -->
+
+    <!-- Font Awesome Icons -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="vendor/fontawesome-pro-5.13.0-web/css/all.min.css">
+
+    <!-- Roboto Web Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <!-- Vendor CSS (Temporarily load from CDN) -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css">
+    <link href="../../node_modules/gridstack/dist/gridstack.min.css" rel="stylesheet"/>
+
+    <!-- Core Shell Styles -->
+    <link rel="stylesheet" type="text/css" href="css/shell.css">
+
+    <!-- <link href="css/themes/ioskeyboard.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../node_modules/simple-keyboard/build/css/index.css"> -->
+
+    <title>DashLab Shell</title>
+</head>
+
+<body>
+
+    <div id="osHeader" class="columns">
+
+        <div class="column is-1">
+            <span class="icon is-large">
+                <i class="fad fa-cloud-moon fa-3x"></i>
+            </span>
+        </div>
+
+        <div class="column is-4">
+            <div class="title is-3">Good Afternoon</div>
+            <div class="subtitle is-4">Welcome Back</div>
+        </div>
+
+        <div class="column is-7 has-text-right">
+            <button class="button button-cta is-success is-light" onclick="nebos.desktop.addIcon('app.open', 'appmgr', 'App', 'fad fa-box-open')">
+                <span class="icon"><i class="fad fa-plus"></i></span>
+                <span>Install Apps</span>
+            </button>
+            <button class="button button-cta is-info is-light" onclick="nebos.desktop.toggleEditing()">
+                <span class="icon"><i class="fad fa-edit"></i></span>
+                <span>Edit Mode</span>
+            </button>
+            <button class="button button-cta is-danger is-light" onclick="location.reload(true)">
+                <span class="icon"><i class="fad fa-redo"></i></span>
+                <span>Reload Shell</span>
+            </button>
+        </div>
+
+    </div>
+
+    <div id="appContainer">
+
+        <div id="osDesktop">
+            
+            <div class="grid-stack"></div>
+
+        </div>
+
+        <!-- <div class="simple-keyboard-container">
+            <div class="simple-keyboard"></div>
+        </div> -->
+
+        <!-- <script src="../../node_modules/simple-keyboard/build/index.js"></script>
+        <script src="system/services/keyboard.service.js"></script> -->
+
+    </div>
+
+    <div class="" style="position:fixed; bottom:5px; left:10px; color:rgba(255, 0, 0, 0.6); font-weight: bold; font-size: 1.1rem;">
+        WORK IN PROGRESS - DOES NOT REPRESENT THE FINAL PRODUCT
+    </div>
+    
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --> <!-- jQuery is imported by gridstack -->
+
+    <!-- Vendor JS (Temporarily imported from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.9.0/localforage.min.js"></script>
+    <script src="../../node_modules/gridstack/dist/gridstack-jq.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <!-- Temporary, Import iziToast & iziModal directly -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js"></script>
+
+    <!-- Temporary, Import Local Vendor JS directly -->
+    <script src="vendor/iziToast.js"></script> <!-- This version of iziToast is slightly modified with a different drag animation -->
+
+    <script src="shellRenderer.js"></script> <!-- Import shell renderer process -->
+
+    <!-- <script src="nebula/nebula.js"></script> --> <!-- Import Nebula Framework -->
+
+</body>
+</html>

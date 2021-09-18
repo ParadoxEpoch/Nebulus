@@ -1,0 +1,51 @@
+.button {
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    margin: 0.25rem;
+}
+
+.button.button-cta {
+    //padding: 22px 40px;
+    padding: 1.4rem 2.5rem;
+}
+
+/* .button.has-icon i {
+    padding-right: 45px;
+}
+
+.button.has-icon-right i {
+    margin-left: 10px;
+} */
+
+// Sets background to transparent. Bulma sets background-color by default but this gets overriden by the is-primary background gradient.
+.button.is-primary.is-outlined {
+    background: transparent;
+}
+
+// Adds gradient to Bulma Button Primary
+.button.is-primary {
+    background: $primary-gradient;
+}
+
+.button.is-secondary {
+    background-color: $secondary;
+    border-color: transparent;
+    color: #fff;
+}
+
+.button:not([disabled]):hover {
+    box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.42), 0 4px 23px 0 rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2) !important;
+    
+    opacity: 0.8;
+
+    // TODO: Change background color opacity on hover, not element opacity. Something like below but that adapts to different button colours.
+    /* background-color: rgb(44 50 63 / .8);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px); */
+
+    /* body.is-dark & {
+        transform: scale(1.02);
+    } */
+
+}

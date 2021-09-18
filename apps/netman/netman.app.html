@@ -1,0 +1,31 @@
+<head>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" type="text/css" href="../../vendor/fontawesome-pro-5.13.0-web/css/all.min.css">
+
+    <!-- Core Shell Styles -->
+    <link rel="stylesheet" type="text/css" href="../../css/shell.css">
+</head>
+
+<div style="height:100%;width:100%;padding:150px" class="has-text-centered">
+    
+    <span class="icon-text mb-5">
+        <span class="icon is-large">
+            <i class="fad fa-wifi fa-3x"></i>
+        </span>
+        <span class="title is-2 ml-5">WiFi Setup</span>
+    </span>
+
+    <div id="output"></div>
+
+    <div class="mt-5">
+        <button class="button button-cta is-success" id="wifi-connect">Connection Wizard</button>
+        <button class="button button-cta is-primary" id="wifi-scan">Network Scan</button>
+        <button class="button button-cta is-info" id="wifi-conns">Show Connections</button>
+        <button class="button button-cta is-danger" id="close-btn">Quit App</button>
+    </div>
+    
+</div>
+
+<script src="netman.app.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

@@ -1,0 +1,176 @@
+.iziModal,
+div.modal-content {
+    box-shadow: rgba(21, 23, 26, 0.06) 0px 0.7rem 1.3rem 0px, rgba(21, 23, 26, 0.12) 0px 1rem 2.2rem 0px, rgba(21, 23, 26, 0.04) 0px -1px 0px 0px;
+	transform: translateZ(0);
+	border-radius: 20px !important;
+    background: $modal-background-color;
+}
+
+.iziModal .iziModal-header,
+div.modal-content > .modal-header {
+	padding: 2.5rem 3rem 1rem;
+	box-shadow: none;
+}
+
+.iziModal .iziModal-header-title,
+div.modal-content > .modal-header > .modal-title {
+	font-family: 'Basier Circle';
+	color: $modal-title-color;
+	font-size: 1.875em;
+    font-weight: 600;
+}
+
+//div.modal-content > .modal-header > .modal-title.subtitle
+.iziModal .iziModal-header-subtitle {
+	font-family: 'Basier Circle';
+	color: $modal-subtitle-color;
+	font-size: 1.125em;
+}
+
+.iziModal .iziModal-header-buttons {
+	padding-right: 1rem;
+}
+
+// Modal Top Rounded Buttons (Close, Fullscreen etc..)
+.iziModal .iziModal-button {
+    filter: invert(1);
+
+    body.is-dark & {
+        filter: invert(0);
+    }
+}
+
+.iziModal .iziModal-content,
+div.modal-content > .modal-body {
+	padding: 1.25rem 3rem 2.5rem 3rem !important;
+    font-family: 'Basier Circle', 'Roboto';
+}
+
+.iziModal .iziModal-content .table {
+    font-family: 'Roboto';
+    background: transparent;
+    color: $text;
+}
+
+.iziModal .iziModal-actions .button {
+    width: 100%;
+    border-radius: 15px;
+    font-family: 'Basier Circle' !important;
+    margin: 7.5px 0 !important;
+}
+
+.iziModal-overlay,
+div.modal-background {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+#nebula-modal-container {
+    display: none;
+}
+
+#nebula-modal-container > div {
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+#nebula-modal-container > div a {
+    color: white;
+}
+
+#nebula-modal-container > div .control.has-button-left a .material-icons,
+#nebula-modal-container > div .control.has-button-right a .material-icons {
+    font-size: 2em;
+    color: white;
+    margin-top: 5px;
+}
+
+#nebula-modal-container > div .control.has-button-left a {
+    margin-right: -40px;
+}
+
+#nebula-modal-container > div .control.has-button-left input {
+    padding-left: 50px;
+}
+
+#nebula-modal-container > div .control.has-button-right a {
+    margin-left: -40px;
+}
+
+#nebula-modal-container > div .control.has-button-right input {
+    padding-right: 50px;
+}
+
+#nebula-modal-container > div .field input.input,
+#nebula-modal-container > div .select .chosen-choices {
+    max-width: 500px;
+    background-color: rgb(255 255 255 / .1);
+    border: none;
+    color: white;
+}
+
+#nebula-modal-container > div .select .chosen-drop {
+    background-color: rgb(45 45 45);
+    border: 1px solid rgb(255 255 255 / 30%);
+    border-top: 0;
+}
+
+#nebula-modal-container > div .select .chosen-results li.highlighted {
+    color: #bc79ff;
+}
+
+#nebula-modal-container > div .select .chosen-results li.result-selected {
+    background-color: rgb(255 255 255 / 10%);
+}
+
+#nebula-modal-container > div .switch[type="checkbox"]+label::before {
+    background: #ededed1a;
+}
+
+#nebula-modal-container > div .switch[type="checkbox"]:hover+label::before {
+    background: #ededed33;
+}
+
+#nebula-modal-container > div .switch[type="checkbox"]:checked+label::before {
+    background: #878787;
+}
+
+#nebula-modal-container > div .field.column.is-6 input.input {
+    max-width: 250px;
+}
+
+#nebula-modal-container > div .field input.input::placeholder {
+    color: rgb(255 255 255 / .7);
+}
+
+/* #nebula-modal-container > div .field button.button-cta {
+    padding: 20px 40px 20px 40px !important;
+} */
+
+#nebula-modal-container > div hr {
+    max-width: 70%;
+    height: 3px;
+    margin: 30px auto;
+    background-color: rgb(255 255 255 / .1);
+    border-radius: 5px;
+}
+
+// Fullscreen CSS - adds a small amount of margin to the modal for aesthetic
+.iziModal.isFullscreen {
+    max-width: 100% !important;
+    margin: 10px !important;
+    margin-top: 80px !important;
+    height: calc(100vh - 100px) !important;
+    border-radius: 20px !important;
+}
+
+// Video Player Modal Specific
+.iziModal[modal-id="videoPlayer"] .iziModal-content {
+    padding: 10px 20px !important;
+}
+
+.iziModal[modal-id="videoPlayer"] .iziModal-content iframe {
+    width: 40vw;
+    height: 25vw;
+    border-radius: 20px;
+}

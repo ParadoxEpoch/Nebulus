@@ -1,0 +1,37 @@
+// Import Bulma
+@import "../../../node_modules/bulma/bulma.sass";
+/* @import "../../../node_modules/bulma-extensions/src/sass/index.sass"; */
+
+// Import Components
+@import 'components/osHeader.scss';
+@import 'components/appContainer.scss';
+@import 'components/osDesktop.scss';
+@import 'components/alerts.scss';
+@import 'components/dropdown.scss';
+@import 'components/animation.scss';
+@import 'components/spinners.scss';
+
+// Import Elements
+@import 'elements/buttons';
+@import 'elements/cards';
+@import 'elements/tabs';
+@import 'elements/icons';
+@import 'elements/modals';
+@import 'elements/sliders';
+@import 'elements/switches';
+
+html {
+    font: 150% $family-sans-serif;
+}
+
+body {
+    background: $body-background-color;
+    width: 1920px;
+    height: 1200px;
+    overflow: hidden;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+}

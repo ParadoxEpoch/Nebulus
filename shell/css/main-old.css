@@ -1,0 +1,110 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f4f3f9;
+    /* background-size: cover;
+    background-position: center;
+    background-image: url('assets/wallpapers/default.jpg'); */
+    /* font-size: 150%; */
+}
+
+#osHeader {
+    height: 225px;
+    width: 100%;
+    background: linear-gradient(to right, #0e0e0f, #080808);
+    /* border-radius: 30px 30px 0 0; */
+}
+
+/* #osHeader::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #000;
+    z-index: -1;
+} */
+
+#appContainer {
+    height: 900px;
+    width: 100%;
+}
+
+#osNavbar {
+    height: 75px;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #dddddd;
+    box-shadow: 0px -1px 15px 0px rgba(153, 153, 153, 0.2);
+}
+
+#osDesktop span.desktop-icon {
+    position: fixed;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+#osDesktop span.desktop-icon i {
+    font-size: 64px;
+    margin-bottom: 5px;
+    padding: 25px;
+    background: rgb(255 255 255 / 20%);
+    border-radius: 20px;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.simple-keyboard-container {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.simple-keyboard {
+    display: none; /* Hide Keyboard */
+    max-width: 850px;
+    margin: auto;
+    width: 100%;
+    zoom: 200%;
+    /* transform: scale(1.5) translateY(-50px); */
+}
+
+/* Theme: numeric */
+.numeric-theme {
+    max-width: 320px;
+    margin: 0 auto;
+}
+  
+.numeric-theme + .simple-keyboard-preview {
+    max-width: 320px;
+}
+  
+.simple-keyboard.hg-theme-default.numeric-theme .hg-button.hg-standardBtn.hg-button-at {
+    max-width: none;
+}
+
+/* Desktop Grid System */
+/* .grid-stack {
+    max-width: 100vw;
+    max-height: 100vh;
+} */
+
+.grid-stack-item-content {
+    color: white;
+    background-color: #000000d9;
+    /* background-color: #000; */
+    border-radius: 10px;
+}
+
+/* .grid-stack > .grid-stack-item.ui-draggable-dragging > .grid-stack-item-content,
+.grid-stack > .grid-stack-item.ui-resizable-resizing > .grid-stack-item-content {
+    box-shadow: none !important;
+    opacity: 1 !important;
+} */
