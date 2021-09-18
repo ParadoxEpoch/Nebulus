@@ -5,6 +5,7 @@
   "main": "boot.js",
   "scripts": {
     "start": "export DISPLAY=:0 && electron --inspect .",
+    "dev": "export DISPLAY=:0 && electron --inspect devBoot.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass-watch": "sass --watch shell/scss:shell/css --style compressed"
   },
@@ -25,6 +26,7 @@
   "dependencies": {
     "bulma": "^0.9.3",
     "bulma-extensions": "^6.2.7",
+    "dotenv": "^10.0.0",
     "electron-reload": "^2.0.0-alpha.1",
     "fs-extra": "^10.0.0",
     "gridstack": "^4.2.6",
