@@ -1,3 +1,4 @@
+require('dotenv').config(); // Import env variables
 const {app, BrowserWindow, ipcMain} = require('electron');
 const {exec, spawn} = require("child_process");
 const fs = require('fs-extra');
@@ -64,7 +65,7 @@ app.whenReady().then(async () => {
 
     global.drivers = {
         stats: require('./system/drivers/stats.driver'),
-        hue: require('./system/drivers/philipshue.driver'),
+        hue: require('./system/drivers/hue/hue.driver'),
         obs: require('./system/drivers/obs.driver'),
         wifi: require('./system/drivers/wifi.driver')
     };
