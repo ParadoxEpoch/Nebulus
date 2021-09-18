@@ -6,10 +6,18 @@ const fs = require('fs-extra');
 const config = require(process.env.PATH_CONFIG + '/obs.config');
 
 async function connect(address, password) {
-    await obs.connect({
+    const result = await obs.connect({
         address: address,
         password: password
     });
+
+    console.log(result);
+    return result;
+}
+
+module.exports = {
+    connect,
+    config
 }
 
 ipcMain.handle('obs.connect', async function (event, arg) {
