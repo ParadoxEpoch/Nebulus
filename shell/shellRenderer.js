@@ -74,7 +74,7 @@ let nebos = new class NebulaOS {
     async boot() {
         console.log('Booting Nebula DashOS Technical Preview...');
 
-        this.desktop = (await import("../services/desktop.service.js")).default;
+        this.desktop = (await import("./extensions/desktop.service.js")).default;
         
     }
 

@@ -3,7 +3,7 @@ const obs = new OBSWebSocket();
 const {ipcMain} = require('electron');
 
 const fs = require('fs-extra');
-const config = require('../../config/obs.config.json');
+const config = require(process.env.PATH_CONFIG + '/obs.config');
 
 async function connect(address, password) {
     await obs.connect({
