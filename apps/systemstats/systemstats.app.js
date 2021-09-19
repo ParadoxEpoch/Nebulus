@@ -59,22 +59,22 @@ async function getStats() {
             <div class="column is-12 mt-6">
                 <ul class="mb-6" style="font-size:1.3rem">
                     <li>
-                        ${metrics.thermals.events.throttled
+                        ${metrics.power.throttled
                             ? '<span class="has-text-danger has-text-weight-bold"><i class="fas fa-temperature-hot mr-1"></i> DashLab is currently thermal throttling!</span>'
                             : ''}
                     </li>
                     <li>
-                        ${metrics.thermals.events.underVoltage
+                        ${metrics.power.underVoltage
                             ? '<span class="has-text-danger has-text-weight-bold"><i class="fas fa-bolt mr-1"></i> DashLab is currently running under voltage!</span>'
                             : ''}
                     </li>
                     <li>
-                        ${metrics.thermals.events.throttledOccurred
+                        ${metrics.power.throttledOccurred
                             ? '<span class="has-text-warning has-text-weight-bold"><i class="fas fa-tachometer-slow mr-1"></i> DashLab has thermal throttled since bootup!</span>'
                             : '<span class="has-text-success"><i class="fas fa-check mr-1"></i> No thermal throttling detected so far since boot</span>'}
                     </li>
                     <li>
-                        ${metrics.thermals.events.underVoltageOccurred
+                        ${metrics.power.underVoltageOccurred
                             ? '<span class="has-text-warning has-text-weight-bold"><i class="fas fa-bolt mr-1"></i> DashLab has run under voltage at some point since bootup!</span>'
                             : '<span class="has-text-success"><i class="fas fa-check mr-1"></i> DashLab\'s power supply has delivered adequate power this session</span>'}
                     </li>

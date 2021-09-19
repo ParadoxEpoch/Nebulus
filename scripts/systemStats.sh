@@ -33,9 +33,7 @@ temp_cpu=$(echo "scale=1;$temp_cpu_raw/1000" | bc)
 printf -v cpu_json '{"freqMhz":"%s","freqGhz":"%s","governor":"%s","temp":"%s"}' "$freq_mhz" "$freq_ghz" "$governor" "$temp_cpu"
 printf -v ram_json '{"used":"%s","free":"%s","available":"%s","total":"%s"}' "$ubc_M" "$ram_free" "$ram_available" "$t_M"
 
-printf '{"cpu":%s,"ram":%s}\n' "$cpu_json" "$ram_json"
-
-# ? Disabled. Use as a reference to interpret the hex value in perfStatus
+# ? Checks power related flags such as undervoltage and thermal throttle events
 function checkstatus {
   # Bit representation
   UNDERVOLTED=0x1
@@ -45,39 +43,32 @@ function checkstatus {
   HAS_CAPPED=0x20000
   HAS_THROTTLED=0x40000
 
-  #Text Colors
-  GREEN=$(tput setaf 2)
-  RED=$(tput setaf 1)
-  NC=$(tput sgr0)
-
-  #Output Strings
-  GOOD="${GREEN}NO${NC}"
-  BAD="${RED}YES${NC}"
-
   #Get Status, extract hex values
   STATUS=$(vcgencmd get_throttled)
   STATUS=${STATUS#*=}
 
-  echo -n "Status: "
-  ((STATUS!=0)) && echo "${RED}${STATUS}${NC}" || echo "${GREEN}${STATUS}${NC}"
+  undervoltage=$((((STATUS&UNDERVOLTED)!=0)) && echo "true" || echo "false")
+  printf -v undervoltage '"underVoltage":%s' "$undervoltage"
 
-  echo "Undervolted:"
-  echo -n "   Now: "
-  (((STATUS&UNDERVOLTED)!=0)) && echo "${BAD}" || echo "${GOOD}"
-  echo -n "   Has Occurred Since Last Reboot: "
-  (((STATUS&HAS_UNDERVOLTED)!=0)) && echo "${BAD}" || echo "${GOOD}"
+  undervoltage_occurred=$((((STATUS&HAS_UNDERVOLTED)!=0)) && echo "true" || echo "false")
+  printf -v undervoltage_occurred '"underVoltageOccurred":%s' "$undervoltage_occurred"
 
-  echo "Throttled:"
-  echo -n "   Now: "
-  (((STATUS&THROTTLED)!=0)) && echo "${BAD}" || echo "${GOOD}"
-  echo -n "   Has Occurred Since Last Reboot: "
-  (((STATUS&HAS_THROTTLED)!=0)) && echo "${BAD}" || echo "${GOOD}"
+  throttled=$((((STATUS&THROTTLED)!=0)) && echo "true" || echo "false")
+  printf -v throttled '"throttled":%s' "$throttled"
 
-  echo "Frequency Capped:"
-  echo -n "   Now: "
-  (((STATUS&CAPPED)!=0)) && echo "${BAD}" || echo "${GOOD}"
-  echo -n "   Has Occurred Since Last Reboot: "
-  (((STATUS&HAS_CAPPED)!=0)) && echo "${BAD}" || echo "${GOOD}"
+  throttled_occurred=$((((STATUS&HAS_THROTTLED)!=0)) && echo "true" || echo "false")
+  printf -v throttled_occurred '"throttledOccurred":%s' "$throttled_occurred"
+
+  frequency_capped=$((((STATUS&CAPPED)!=0)) && echo "true" || echo "false")
+  printf -v frequency_capped '"frequencyCapped":%s' "$frequency_capped"
+
+  frequency_capped_occurred=$((((STATUS&HAS_CAPPED)!=0)) && echo "true" || echo "false")
+  printf -v frequency_capped_occurred '"frequencyCappedOccurred":%s' "$frequency_capped_occurred"
+
+  printf -v power_json '{%s,%s,%s,%s,%s,%s}' "$undervoltage" "$undervoltage_occurred" "$throttled" "$throttled_occurred" "$frequency_capped" "$frequency_capped_occurred"
+
 }
 
-#checkstatus
+checkstatus
+
+printf '{"cpu":%s,"ram":%s,"power":%s}\n' "$cpu_json" "$ram_json" "$power_json"

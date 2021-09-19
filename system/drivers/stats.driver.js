@@ -1,36 +1,10 @@
 const {exec, spawn} = require("child_process");
-const RpiThrottled = require('rpi-throttled');
 const {ipcMain} = require('electron');
-
-//create a new object
-let thermalEvents = new RpiThrottled();
 
 ipcMain.handle('metrics.system', async function (event, arg) {
     const systemStats = await runInternalScript('systemStats');
-    systemStats.thermals = await getThermals();
     return systemStats;
 });
-
-ipcMain.handle('metrics.thermalEvents', async function (event, arg) {
-    return await getThermals();
-});
-
-async function getThermals() {
-    thermalEvents.update(false);
-    return {
-        //temp: 
-        events: {
-            throttled: thermalEvents.throttled,
-            underVoltage: thermalEvents.underVoltage,
-            softTempLimit: thermalEvents.softTempLimit,
-            frequencyCapped: thermalEvents.frequencyCapped,
-            throttledOccurred: thermalEvents.throttledOccurred,
-            underVoltageOccurred: thermalEvents.underVoltageOccurred,
-            softTempLimitOccurred: thermalEvents.softTempLimitOccurred,
-            frequencyCappedOccurred: thermalEvents.frequencyCappedOccurred
-        }
-    };
-}
 
 // Runs a script from the scripts directory and parses its JSON stdout
 async function runInternalScript(scriptName) {
@@ -50,4 +24,9 @@ async function runInternalScript(scriptName) {
 
     return jsonResult;
 
+}
+
+module.exports = async function() {
+    const systemStats = await runInternalScript('systemStats');
+    return systemStats;
 }

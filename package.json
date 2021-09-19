@@ -33,7 +33,6 @@
     "node-hue-api": "^5.0.0-beta.8",
     "node-wifi": "^2.0.15",
     "obs-websocket-js": "^4.0.3",
-    "rpi-throttled": "^1.2.1",
     "simple-keyboard": "^3.2.43"
   }
 }
