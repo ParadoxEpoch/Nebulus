@@ -1,4 +1,4 @@
-function hueLight(id) {
+module.exports = function(id) {
 
     const getLightState = async () => await this._bridge.lights.getLightState(id);
     const setLightState = async (state) => await this._bridge.lights.setLightState(id, state);
@@ -49,5 +49,3 @@ function hueLight(id) {
         setState: setLightState
     }
 }
-
-module.exports = hueLight;
