@@ -50,7 +50,7 @@ const driver = new class HueDriver {
         // Connect to bridge without authentication so that we can create a new user
         const unauthenticatedApi = await hueApi.createLocal(bridgeip).connect();
 
-        async function attemptLink() {
+        const attemptLink = async () => {
             try {
                 const createdUser = await unauthenticatedApi.users.createUser(appName, deviceName);
 

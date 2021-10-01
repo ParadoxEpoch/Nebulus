@@ -4,8 +4,8 @@
   "description": "Nebula DashLab System Software",
   "main": "boot.js",
   "scripts": {
-    "start": "export DISPLAY=:0 && electron --inspect .",
-    "dev": "export DISPLAY=:0 && electron --inspect devBoot.js",
+    "start": "export DISPLAY=:0 && electron --inspect --no-sandbox .",
+    "dev": "export DISPLAY=:0 && electron --inspect --no-sandbox devBoot.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass-watch": "sass --watch shell/scss:shell/css --style compressed"
   },
